@@ -1,0 +1,210 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where([hidden]:not([hidden=until-found])) {
+  display: none !important;
+}
+
+:where(html) {
+  -webkit-text-size-adjust: none;
+  color-scheme: dark light;
+}
+
+@supports not (min-block-size: 100dvb) {
+  :where(html) {
+    block-size: 100%;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :where(html:focus-within) {
+    scroll-behavior: smooth;
+  }
+}
+:where(body) {
+  block-size: 100%;
+  block-size: 100dvb;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:where(input, button, textarea, select) {
+  font: inherit;
+  color: inherit;
+}
+
+:where(textarea) {
+  resize: vertical;
+  resize: block;
+}
+
+:where(button, label, select, summary, [role=button], [role=option]) {
+  cursor: pointer;
+}
+
+:where(:disabled) {
+  cursor: not-allowed;
+}
+
+:where(label:has(> input:disabled), label:has(+ input:disabled)) {
+  cursor: not-allowed;
+}
+
+:where(button) {
+  border-style: solid;
+}
+
+:where(a) {
+  text-underline-offset: 0.2ex;
+}
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+
+:where(img, picture, svg) {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(h1, h2, h3) {
+  line-height: calc(1em + 0.5rem);
+}
+
+:where(hr) {
+  border: none;
+  border-block-start: 1px solid;
+  color: inherit;
+  block-size: 0;
+  overflow: visible;
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--focus-color, Highlight);
+  outline-offset: 2px;
+}
+
+:where(.visually-hidden:not(:focus, :active, :focus-within, .not-visually-hidden)) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:root {
+  --color_main1: #fff;
+  --color_main2: #000;
+  --color_bg: #e4eaf2;
+  --color_font-color: #3f704d;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--color_font-color);
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site_link #site_link-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0px #333, 5px 5px 5px 8px #444, 0 8px 15px rgba(0, 0, 0, 0);
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  transition: all 0.2s;
+  outline: none; /* デフォルトのフォーカススタイルを削除します */
+  user-select: none; /* テキスト選択を防止します */
+}
+.site_link #site_link-btn:active {
+  box-shadow: inset 0 -2px #111, 0 1px #666, 0 2px 4px rgba(0, 0, 0, 0.2); /* シャドウを狭くします */
+  transform: scale(0.9); /* ボタンを少し縮小します */
+}
+.site_link #site_link-btn:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.MV {
+  background-color: var(--color_bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.MV .MV_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1280px;
+  margin: auto;
+  padding: 0;
+}
+.MV .MV_wrap .MV_contaner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-left: 60px;
+}
+.MV .MV_wrap .MV_contaner .MV_contaner_text .MV_contaner_text-lead {
+  color: #fff;
+  font-size: 30px;
+  background-color: #6aa5bd;
+  border-radius: 10px;
+  width: 550px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5em;
+  margin-top: 100px;
+}
+.MV .MV_wrap .MV_contaner .MV_contaner_text .MV_contaner_text_heading {
+  font-size: 60px;
+  margin: 40px auto;
+  white-space: nowrap;
+}
+.MV .MV_wrap .MV_contaner .MV_contaner_image-left {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto;
+}
+.MV .MV_wrap .MV_contaner .MV_contaner_image-left .MV_contaner_image-left-img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.MV .MV_wrap .MV_contaner_image-hero {
+  position: relative;
+  right: 0;
+}
+.MV .MV_wrap .MV_contaner_image-hero .MV_contaner_image-hero-img {
+  width: 700px;
+}/*# sourceMappingURL=style.css.map */
